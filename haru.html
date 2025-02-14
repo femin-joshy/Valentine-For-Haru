@@ -1,0 +1,345 @@
+<meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Valentine's Day Date Invitation</title>
+<style>
+body {
+    font-family: 'Segoe Script', cursive; /* Fallback cursive font */
+    background-color: #f8f0e3; /* Light paper background */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+@font-face {
+    font-family: 'CursiveHandwriting';
+    src: url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+    font-display: swap;
+}
+
+h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: 2px solid #333;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #eee;
+}
+
+#yesButton {
+    background-color: #e6f7ff; /* Light blue for Yes */
+    transition: all 0.3s ease;
+}
+
+#noButton {
+    background-color: #ffe6e6; /* Light pink for No */
+}
+
+/* Teasing text and arrow pointer toward the No button */
+.tease-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#teaseMessage {
+    color: #d63384;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 2em;
+    transform: rotate(180deg); /* Flip arrow to point left if needed */
+}
+
+/* Good girl message hidden by default */
+#goodGirlMessage {
+    display: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #d63384;
+    margin-top: 20px;
+}
+
+.plan-section {
+    display: none; /* Hidden by default */
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.plan-section h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+.plan-section ul {
+    list-style: disc;
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+.plan-section li {
+    margin-bottom: 10px;
+}
+
+.back-button-container {
+    margin-top: 20px;
+}
+
+#backButton {
+    background-color: #f0f0f0;
+}
+
+/* Classes for enlarging the Yes button each time the NO button is clicked */
+#yesButton.увеличенный-1 {
+    font-size: 1.3em;
+    padding: 18px 33px;
+}
+#yesButton.увеличенный-2 {
+    font-size: 1.4em;
+    padding: 20px 35px;
+}
+#yesButton.увеличенный-3 {
+    font-size: 1.5em;
+    padding: 22px 37px;
+}
+#yesButton.увеличенный-4 {
+    font-size: 1.6em;
+    padding: 24px 39px;
+}
+#yesButton.увеличенный-5 {
+    font-size: 1.7em;
+    padding: 26px 41px;
+}
+#yesButton.увеличенный-6 {
+    font-size: 1.8em;
+    padding: 28px 43px;
+}
+#yesButton.увеличенный-7 {
+    font-size: 1.9em;
+    padding: 30px 45px;
+}
+#yesButton.увеличенный-8 {
+    font-size: 2em;
+    padding: 32px 47px;
+}
+#yesButton.увеличенный-9 {
+    font-size: 2.1em;
+    padding: 34px 49px;
+}
+#yesButton.увеличенный-10 {
+    font-size: 2.2em;
+    padding: 36px 51px;
+}
+#yesButton.увеличенный-11 {
+    font-size: 2.3em;
+    padding: 38px 53px;
+}
+#yesButton.увеличенный-12 {
+    font-size: 2.4em;
+    padding: 40px 55px;
+}
+#yesButton.увеличенный-13 {
+    font-size: 2.5em;
+    padding: 42px 57px;
+}
+#yesButton.увеличенный-14 {
+    font-size: 2.6em;
+    padding: 44px 59px;
+}
+#yesButton.увеличенный-15 {
+    font-size: 2.7em;
+    padding: 46px 61px;
+}
+#yesButton.увеличенный-16 {
+    font-size: 2.8em;
+    padding: 48px 63px;
+}
+#yesButton.увеличенный-17 {
+    font-size: 2.9em;
+    padding: 50px 65px;
+}
+#yesButton.увеличенный-18 {
+    font-size: 3em;
+    padding: 52px 67px;
+}
+#yesButton.увеличенный-19 {
+    font-size: 3.1em;
+    padding: 54px 69px;
+}
+#yesButton.увеличенный-20 {
+    font-size: 3.2em;
+    padding: 56px 71px;
+}
+#yesButton.увеличенный-21 {
+    font-size: 3.3em;
+    padding: 58px 73px;
+}
+#yesButton.увеличенный-22 {
+    font-size: 3.4em;
+    padding: 60px 75px;
+}
+#yesButton.увеличенный-23 {
+    font-size: 3.5em;
+    padding: 62px 77px;
+}
+#yesButton.увеличенный-24 {
+    font-size: 3.6em;
+    padding: 64px 79px;
+}
+#yesButton.увеличенный-25 {
+    font-size: 3.7em;
+    padding: 66px 81px;
+}
+#yesButton.увеличенный-26 {
+    font-size: 3.8em;
+    padding: 68px 83px;
+}
+#yesButton.увеличенный-27 {
+    font-size: 3.9em;
+    padding: 70px 85px;
+}
+#yesButton.увеличенный-28 {
+    font-size: 4em;
+    padding: 72px 87px;
+}
+#yesButton.увеличенный-29 {
+    font-size: 4.1em;
+    padding: 74px 89px;
+}
+#yesButton.увеличенный-30 {
+    font-size: 4.2em;
+    padding: 76px 91px;
+}
+</style>
+</head>
+<body>
+    <h1>Valentine's Day</h1>
+    <h1>Date Plan for the<br> Cutest Girlfriend Ever!</h1>
+    <p>(Yes, it's you Haru! ;D)</p>
+
+    <h2>Invitation to the best Valentine's Day date<br> for the most prettiest girl in the world</h2>
+    <p>by - Femin</p>
+
+    <div class="button-container">
+        <button id="noButton">No</button>
+        <button id="yesButton">Yes</button>
+    </div>
+
+    <div class="tease-container">
+        <span class="arrow">←</span>
+        <span id="teaseMessage">Go ahead, try and keep pressing that No (because I know you're a bad girl ahaha)!</span>
+    </div>
+
+    <p id="goodGirlMessage">Good girl <3!</p>
+
+    <div id="planSection" class="plan-section">
+        <h3>💘 Here's what I have planned for us, Princess! 💘</h3>
+        <ul>
+          <li><b>11:00 AM - 12:30 PM:</b> Brunch at Asakara Good Store! 🥞 <a href="https://maps.app.goo.gl/CC4iE7byG3PoCVdP6" target="_blank">(Directions)</a> Enjoy a yummy start to our day.</li>
+          <li><b>12:30 PM - 5:00 PM:</b> Tsurumi Ryokuchi Park Adventure! 🌷🧺 <a href="https://maps.app.goo.gl/sbsHsvAxtEGV1EwZ6" target="_blank">(Park Info)</a> Get ready for a fun picnic and other lovely activities in the park. (Surprise! 😉)</li>
+          <li><b>5:45 PM - 8:00 PM:</b> Movie Time! 🎬 We're watching the Laufey movie at Toho Cinemas Umeda at 6:15 PM.</li>
+          <li><b>8:30 PM - onwards:</b> Romantic Evening Walk ✨ Let's enjoy a beautiful evening walk in Nakanoshima Park after the movie.</li>
+        </ul>
+
+        <p style="font-size: 1.2em; margin-top: 30px;">Thanks for keeping me so happy, Haru. ❤️ I'm incredibly excited for our Valentine's Day together!</p>
+
+        <div class="back-button-container">
+            <button id="backButton">Go Back To First Page (cause I know your ass wanna screen record this ahahaha)</button>
+        </div>
+    </div>
+
+<script>
+// The user wants the NO button to trigger the YES button to grow.
+let yesButtonSizeLevel = 0;
+
+const noButton = document.getElementById('noButton');
+const yesButton = document.getElementById('yesButton');
+const planSection = document.getElementById('planSection');
+const backButton = document.getElementById('backButton');
+const goodGirlMessage = document.getElementById('goodGirlMessage');
+
+// Each time NO is clicked, YES button grows.
+noButton.addEventListener('click', () => {
+    yesButtonSizeLevel++;
+    if (yesButtonSizeLevel <= 30) {
+        yesButton.className = `увеличенный-${yesButtonSizeLevel}`;
+    } else {
+        // If it goes beyond 30, fill the screen.
+        yesButton.style.width = '100vw';
+        yesButton.style.height = '100vh';
+        yesButton.style.position = 'fixed';
+        yesButton.style.top = '0';
+        yesButton.style.left = '0';
+    }
+});
+
+// Clicking YES shows the plan and the 'Good girl <3!' message.
+yesButton.addEventListener('click', () => {
+    goodGirlMessage.style.display = 'block';
+    setTimeout(() => {
+        goodGirlMessage.style.display = 'none';
+        planSection.style.display = 'block';
+        document.querySelector('.button-container').style.display = 'none';
+        document.querySelector('h2').style.display = 'none';
+        document.querySelector('p:nth-of-type(2)').style.display = 'none';
+    }, 1500);
+});
+
+backButton.addEventListener('click', () => {
+    // Reset everything.
+    planSection.style.display = 'none';
+    document.querySelector('.button-container').style.display = 'flex';
+    document.querySelector('h2').style.display = 'block';
+    document.querySelector('p:nth-of-type(2)').style.display = 'block';
+
+    // Reset the YES button's size.
+    yesButtonSizeLevel = 0;
+    yesButton.className = '';
+    yesButton.style.width = '';
+    yesButton.style.height = '';
+    yesButton.style.position = '';
+    yesButton.style.top = '';
+    yesButton.style.left = '';
+});
+</script>
+
+</body>
+</html>
